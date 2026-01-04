@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Itch.io Price Tracker{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'scraper/style.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'scraper/icon.png' %}">
+</head>
+
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>

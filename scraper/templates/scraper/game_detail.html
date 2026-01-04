@@ -1,0 +1,31 @@
+{% extends "scraper/base.html" %}
+{% block title %}{{ game.title }}{% endblock %}
+{% block content %}
+{% load static %}
+
+<body>
+<h1>{{ game.title }}</h1>
+
+<a href="{{ game.url }}" target="_blank">View on itch.io</a>
+<hr>
+
+<table border="1">
+    <tr>
+        <th>Date</th>
+        <th>Price</th>
+        <th>Original</th>
+        <th>Discount</th>
+    </tr>
+    {% for p in prices %}
+    <tr>
+        <td>{{ p.date_checked }}</td>
+        <td>${{ p.current_price }}</td>
+        <td>${{ p.original_price }}</td>
+        <td>{{ p.discount }}%</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="{% url 'home' %}">⬅ Back</a>
+</body>
+{% endblock %}
