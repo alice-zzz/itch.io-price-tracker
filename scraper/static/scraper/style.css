@@ -25,7 +25,7 @@ h1 {
     font-weight: bold;
     color: #2F97C1;
     line-height: 0.4;
-    margin-top: 0;      /* Add this */
+    margin-top: 0;     
     margin-bottom: 0;
  
 }
@@ -34,7 +34,7 @@ img {
     width: 90px; 
     display: block;
     margin: auto; 
-    margin-top: 0;  /* Add this */
+    margin-top: 0;  
 }
 
 form{
