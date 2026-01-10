@@ -9,7 +9,7 @@ I have recently gotten into playing cozy indie games in my free time on sites li
 Additionally, I wanted to try web-scraping for the first time, and itch.io, where webpages have uniform html class names, was the perfect place to start. I chose itch.io rather than Steam because web scraping is against Steam's ToS.
 
 # Features and Implementation
-Daily Scrape: Every morning at 10:40 AM, the site will automatically scrape the games it is current tracking and add it to its log.
+Daily Scrape: Every morning at 10:40 AM, the site will automatically scrape the games it is currently tracking and add it to its log.
 
 Add Games: By pasting an itch.io game page's url and clicking "Add Game", the game will be added to the tracked games list and will be scraped daily. Whenever this game meets or exceeds the wanted price/discount, a notification will be sent. 
 
