@@ -17,7 +17,7 @@ Scrape All Now: There is also the option of manually scraping all sites instantl
 
 Price History Data: For each game, its entire price history from when it was added is stored in an SQLite3 database and can be viewed by clicking the game name on the home page.
 
-macOS Alert: When price falls below target price or discount exceeds target discount, a macOS notification is sent announcing the game name and its current price and discount. 
+macOS Alert: If the price has fallen below target price or if discount exceeds target discount when the daily scrape is performed, a macOS notification is sent announcing the game name and its current price and discount. This does not require the webpage to be open.
 
 # Future Improvements
 Graphing and Historical Low: Each game's full price history is already being tracked for every scrape run. This could be extended further by creating a graphical showcase of the historical price data of each game. Additionally, the historical price data can be used to send an additional alert whenever a price reaches a historical low. 
