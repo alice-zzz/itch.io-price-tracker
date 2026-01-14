@@ -9,6 +9,30 @@
 <a href="{{ game.url }}" target="_blank">View on itch.io</a>
 <hr>
 
+{% if game.target_price or game.target_discount %}
+    <div class="targets">
+        <span class="target-label">Target: </span>
+        {% if game.target_price %}<br> Price ≤ <mark>${{ game.target_price }}</mark>{% endif %}
+        {% if game.target_discount %}<br> Discount ≥ <mark>{{ game.target_discount }}%</mark>{% endif %}
+    </div>
+{% endif %}
+
+
+<div class="game-actions">
+    <a href="{% url 'edit_game' game.pk %}">
+        <button class="small-button" >Edit Targets</button>
+    </a>
+    
+    <form action="{% url 'delete_game' game.pk %}" method="post" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit" class="small-button" onclick="return confirm('Delete {{ game.title }}?')">Delete</button>
+    </form>
+    
+</div>
+
+
+<a href="{% url 'home' %}">⬅ Back</a>
+
 <table border="1">
     <tr>
         <th>Date</th>
@@ -19,13 +43,25 @@
     {% for p in prices %}
     <tr>
         <td>{{ p.date_checked }}</td>
-        <td>${{ p.current_price }}</td>
-        <td>${{ p.original_price }}</td>
-        <td>{{ p.discount }}%</td>
+        <td>${{ p.current_price|floatformat:2 }}</td>
+        <td>
+            {% if p.original_price and p.original_price > 0 %}
+                ${{ p.original_price|floatformat:2 }}
+            {% else %}
+                N/A
+            {% endif %}
+        </td>
+        <td>
+            {% if p.discount %}
+                {{ p.discount }}%
+            {% else %}
+                N/A
+            {% endif %}
+        </td>
     </tr>
     {% endfor %}
 </table>
 
-<a href="{% url 'home' %}">⬅ Back</a>
+
 </body>
 {% endblock %}

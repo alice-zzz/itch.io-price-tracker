@@ -13,7 +13,7 @@
     </div>
     
     <div class="add-game">
-        <form method="post">
+        <form action="{% url 'add_game' %}" method="post">
             {% csrf_token %}
             <input type="url" name="url" placeholder="Itch.io Game URL" required>
             <button type="submit">Add Game</button>
@@ -43,10 +43,10 @@
                                 {% endif %}</mark>
                             </div>
 
-                            Current Price: <mark>${{ latest.current_price }}</mark> 
+                            Current Price: <mark>${{ latest.current_price|floatformat:2 }}</mark> 
 
                             {% if latest.original_price and latest.original_price != latest.current_price %}
-                                (was ${{ latest.original_price }})
+                                (was ${{ latest.original_price|floatformat:2 }})
                             {% endif %}<br>
 
                             <span class="last-checked">Last Checked: {{ latest.date_checked }}</span>
@@ -54,6 +54,8 @@
                     {% else %}
                         No price data yet.
                     {% endif %}
+                    
+
                 </li>
             {% endfor %}
             </ul>

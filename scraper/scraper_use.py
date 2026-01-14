@@ -70,14 +70,14 @@ def add_game_with_scraping(url):
         if price.current_price <= game.target_price:
             triggered = True
     
-    #  Target discount  met
+    #  Target discount met
     if game.target_discount is not None and price.discount is not None:
         if price.discount >= game.target_discount:
             triggered = True
 
     # Send notification 
     if triggered and not game.notified:
-        msg = f"{game.title} - Price: ${price.current_price}"
+        msg = f"{game.title} - Price: ${price.current_price:.2f}"
         if price.discount:
             msg += f", {price.discount}% off"
         
