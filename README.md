@@ -32,7 +32,7 @@ Price History Data: For each game, its entire price history from when it was add
 
 Set Targets: Click into a game's page to set target price or discount. When either one is met or exceeded (i.e. price falls below target price or discount is above target discount), a masOS notification is sent.
 
-macOS Alert: If the price has fallen below target price or if discount exceeds target discount when the daily scrape is performed, a macOS notification is sent announcing the game name and its current price and discount. This does not require the webpage to be open.
+macOS Alert: If the price has fallen below target price or if discount exceeds target discount when the daily scrape is performed, a macOS notification is sent announcing the game name and its current price and discount. This does not require the webpage or program to be open.
 
 
 # Installation and Setup
