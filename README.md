@@ -3,7 +3,7 @@ Receive alerts when your favourite games are within your means to purchase!
 
 
 # Demo 
-![alt text](https://i.ibb.co/84nWWFxB/image.png "Website Demo Image")
+https://github.com/user-attachments/assets/3f0174d2-992b-4ec6-ac95-b15cb15dd1ed
 
 
 # Why I built this
